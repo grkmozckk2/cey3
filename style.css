@@ -34,7 +34,8 @@ body, html {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  object-fit: contain; /* 🔁 cover → contain yapıldı */
+  background: black; /* siyah boşluklar oluşursa arka plan uyumlu görünür */
   z-index: 5;
 }
 
