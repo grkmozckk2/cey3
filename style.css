@@ -1,6 +1,13 @@
-body, html {
+/* Tüm elementler için reset ve kutu modeli düzeltmesi */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   background: black;
   font-family: sans-serif;
@@ -8,42 +15,76 @@ body, html {
   text-align: center;
 }
 
+/* Açılıştaki siyah ekran */
 #black-screen {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background: black;
   opacity: 1;
   z-index: 10;
   transition: opacity 2s;
 }
 
+/* Videolar için tam ekran ve taşma önleyici stil */
 #intro-video,
 #heart1-video,
 #heart2-video {
   display: none;
   position: fixed;
+  inset: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
   z-index: 5;
 }
 
+/* Pembe zeminli ana içerik (buton ve yazı) */
 #main-content {
   display: none;
+  position: fixed;
+  inset: 0;
   background-color: pink;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 20vh;
   z-index: 2;
+
+  /* Dikey ortalama ve mobil uyumluluk */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
+/* Yazı */
+#main-content h1 {
+  font-size: 6vw;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Kalp butonu */
 #heart-button {
-  font-size: 3rem;
+  font-size: 10vw;
   background: purple;
   color: white;
   border: none;
   border-radius: 50%;
   padding: 1em;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#heart-button:hover {
+  transform: scale(1.1);
+}
+
+/* Küçük ekranlar için özel stil */
+@media (max-width: 600px) {
+  #main-content h1 {
+    font-size: 7vw;
+  }
+
+  #heart-button {
+    font-size: 14vw;
+    padding: 1em;
+  }
 }
