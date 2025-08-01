@@ -1,0 +1,49 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#black-screen {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  opacity: 1;
+  z-index: 10;
+  transition: opacity 2s;
+}
+
+#intro-video,
+#heart1-video,
+#heart2-video {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 5;
+}
+
+#main-content {
+  display: none;
+  background-color: pink;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20vh;
+  z-index: 2;
+}
+
+#heart-button {
+  font-size: 3rem;
+  background: purple;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 1em;
+  cursor: pointer;
+}
